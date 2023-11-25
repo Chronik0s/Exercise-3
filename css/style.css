@@ -1,0 +1,26 @@
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #character {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            border-radius: 50%;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+        }
+.text{
+color: #3498db;
+margin: 10px;
+text-shadow: #f0f0f0 1px 1px 0;
+}
