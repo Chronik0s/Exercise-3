@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,56 +27,72 @@
             transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
         }
 
-        #character1 { background-color: #34c8db; }
-        #character2 { background-color: #e74c3c; }
-        #character3 { background-color: #2ecc71; }
-        #character4 { background-color: #f39c12; }
-        #character5 { background-color: #9b59b6; }
+        #character1 {
+            background-color: #34c8db;
+        }
+
+        #character2 {
+            background-color: #e74c3c;
+        }
+
+        #character3 {
+            background-color: #2ecc71;
+        }
+
+        #character4 {
+            background-color: #f39c12;
+        }
+
+        #character5 {
+            background-color: #9b59b6;
+        }
     </style>
 </head>
+
 <body>
     <H1 class="text">Hover Circles!</H1>
-<script src="js/main.js" ></script>
-<div id="character1" class="character"></div>
-<div id="character2" class="character"></div>
-<div id="character3" class="character"></div>
-<div id="character4" class="character"></div>
-<div id="character5" class="character"></div>
+    <script src="js/main.js"></script>
+    <div id="character1" class="character"></div>
+    <div id="character2" class="character"></div>
+    <div id="character3" class="character"></div>
+    <div id="character4" class="character"></div>
+    <div id="character5" class="character"></div>
 
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>
-    const characters = ['#character1', '#character2', '#character3', '#character4', '#character5'];
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        const characters = ['#character1', '#character2', '#character3', '#character4', '#character5'];
 
-    // Character states
-    const states = [
-        { transform: 'scale(1)', backgroundColor: '#3498db' },
-        { transform: 'scale(1.2)', backgroundColor: '#e74c3c' },
-        { transform: 'rotate(45deg)', backgroundColor: '#2ecc71' },
-        { transform: 'translateX(50px)', backgroundColor: '#f39c12' },
-        { transform: 'translateY(-50px)', backgroundColor: '#9b59b6' }
-    ];
+        // Character states
+        const states = [
+            { transform: 'scale(1)', backgroundColor: '#3498db' },
+            { transform: 'scale(1.2)', backgroundColor: '#e74c3c' },
+            { transform: 'rotate(45deg)', backgroundColor: '#2ecc71' },
+            { transform: 'translateX(50px)', backgroundColor: '#f39c12' },
+            { transform: 'translateY(-50px)', backgroundColor: '#9b59b6' }
+        ];
 
-    // Initialize characters
-    characters.forEach((character, index) => {
-        $(character).on('mouseover', function () {
-            updateCharacter(character, index + 1);
-        });
+        // Initialize characters
+        characters.forEach((character, index) => {
+            $(character).on('mouseover', function () {
+                updateCharacter(character, index + 1);
+            });
 
-        $(character).on('mouseout', function () {
+            $(character).on('mouseout', function () {
+                updateCharacter(character, 0);
+            });
+
             updateCharacter(character, 0);
         });
 
-        updateCharacter(character, 0);
-    });
-
-    // Update character style based on the current state
-    function updateCharacter(character, currentState) {
-        $(character).css({
-            transform: states[currentState % states.length].transform,
-            backgroundColor: states[currentState % states.length].backgroundColor
-        });
-    }
-</script>
+        // Update character style based on the current state
+        function updateCharacter(character, currentState) {
+            $(character).css({
+                transform: states[currentState % states.length].transform,
+                backgroundColor: states[currentState % states.length].backgroundColor
+            });
+        }
+    </script>
 
 </body>
+
 </html>
